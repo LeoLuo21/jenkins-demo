@@ -1,6 +1,6 @@
 #/bin/bash
 PID=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
-if [ -n $PID ]; then
+if [[ -n $PID ]]; then
 	kill -9 $PID
 	echo "Original Process ID - $PID has been killed."
 fi
