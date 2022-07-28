@@ -1,7 +1,7 @@
 #/bin/bash
 echo "start building"
 PID=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
-if [[ -n $PID ]];then
+if [ -n $PID ];then
 	echo "prepare to kill pid - $PID"
 	kill -9 $PID
 	echo "finish killing pid - $PID"
