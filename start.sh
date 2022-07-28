@@ -1,7 +1,6 @@
 #/bin/bash
-BUILD_ID=dontKillMe
 echo "start building"
-PID=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
+export PID=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
 echo "original pid = $PID"
 if test -n $PID
 then 
