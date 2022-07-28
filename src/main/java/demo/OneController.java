@@ -20,6 +20,6 @@ public class OneController {
     }
     @GetMapping("/test")
     public String test() {
-        return "Test";
+        return "Test!!!!";
     }
 }
