@@ -1,14 +1,11 @@
 #/bin/bash
-echo "start building"
-export PID=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
-echo "original pid = $PID"
-if test -n $PID
-then 
+PID=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
+if [ -n $PID ]; then
 	kill -9 $PID
-	echo "original process has been killed"
+	echo "Original Process ID - $PID has been killed."
 fi
-echo "start compiling"
+echo "Start compiling."
 mvn clean package spring-boot:repackage
-echo "start executing"
+echo "Start executing."
 nohup java -jar target/jenkins-demo-1.0.0.jar >/dev/null 2>&1 &
-echo "project is running now"
+echo "Project is running now."
