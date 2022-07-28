@@ -1,11 +1,13 @@
 #/bin/bash
 BUILD_ID=dontKillMe
 echo "start building"
-PIDS=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
-for pid in $PIDS
-do
-	kill -9 $pid
-done
+PID=$(lsof -i :10001 | grep 10001 | awk '{print $2}')
+echo "original pid = $PID"
+if test -n $PID
+then 
+	kill -9 $PID
+	echo "original process has been killed"
+fi
 echo "start compiling"
 mvn clean package spring-boot:repackage
 echo "start executing"
