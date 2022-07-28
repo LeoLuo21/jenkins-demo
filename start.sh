@@ -1,7 +1,7 @@
 #/bin/bash
 pid=`lsof -i :10001 | grep 10001 | awk '{print $2}'`
 echo "pid=$pid"
-if [ -n $pid ]; then
+if [ -n "$pid" ]; then
 	kill -9 $pid
 	echo "$pid has been killed."
 fi
