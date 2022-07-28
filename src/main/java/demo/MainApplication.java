@@ -11,15 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 20220728 23:25:05
  */
 @SpringBootApplication
-@ResponseBody
 public class MainApplication {
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class,args);
     }
-
-    @GetMapping("/hello")
-    public String hello() {
-        return "hello";
-    }
-
 }
