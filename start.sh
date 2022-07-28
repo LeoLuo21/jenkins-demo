@@ -1,5 +1,5 @@
 #/bin/bash
-pid=`lsof -i :10001 | grep 10001 | awk '{print $2}'`
+pid=`lsof -t -i:10001`
 echo "pid=$pid"
 if [ -n "$pid" ]; then
 	kill -9 $pid
