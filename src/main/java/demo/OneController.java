@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class OneController {
     @GetMapping("/")
     public String info() {
-        return "@@@SUCCESS";
+        return "SUCCESS";
     }
 }
