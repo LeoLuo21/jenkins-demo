@@ -12,14 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class OneController {
     @GetMapping("/")
     public String info() {
-        return "You see me.";
-    }
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello,World";
-    }
-    @GetMapping("/test")
-    public String test() {
-        return "Success.";
+        return "SUCCESS";
     }
 }
