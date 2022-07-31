@@ -1,4 +1,4 @@
-pid=`lsof -t -i:10001`
+pid=`ps -ef | grep jenkins-demo | grep -v grep | awk '{print $2}'`
 if [ -n "$pid" ]; then
 	kill -9 $pid
 fi
