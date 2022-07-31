@@ -1,5 +1,5 @@
 #!/bin/bash -xe
-pid=`lsof -t -i:10001`
+declare pid=`lsof -t -i:10001`
 echo "pid=$pid"
 if [ -n "$pid" ]; then
 	kill -9 $pid
